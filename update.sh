@@ -21,6 +21,10 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
+# ANNOYANCES CORRECTED
+# ------------------------------------
+# Disable “System program problem detected” windows
+sudo sed -i 's/^enabled=1/enabled=0/' /etc/default/apport
 
 
 # HARDENING
